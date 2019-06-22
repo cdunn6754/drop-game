@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css';
 import FallingCircle from './FallingCircle';
-import { delay } from './delay';
+import { delay } from './delay'; 
 
 function App() {
 
