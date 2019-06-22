@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+
 import './App.css';
+import FallingCircle from './FallingCircle';
+import { delay } from './delay';
 
 function App() {
+
+  const [dropTop, setDropTop] = useState(10);
+
+  const  moveDrop =  () => {
+    (
+      async () => {
+        if (dropTop < 90) {
+          await delay(500);
+          setDropTop(dropTop + 0.5);
+        }
+      }
+    )()
+    
+  };
+
+  useEffect(() => moveDrop());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FallingCircle  top={ dropTop }/>
     </div>
   );
 }
