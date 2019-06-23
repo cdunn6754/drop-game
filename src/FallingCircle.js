@@ -19,6 +19,7 @@ function FallingCircle(props) {
         top: '30%',//`${props.top}%`,
         backgroundColor: color
       }}
+      touch-action="none"
       onPointerDown={ handleMouseDown }
       onPointerUp={ handleMouseUp }
       //onPointerMove={ color==='blue' ? handleMouseMove : null }
